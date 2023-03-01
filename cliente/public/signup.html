@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Discreetly</title>
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <script src="./config/config.js"></script>
+</head>
+<body>
+<h1 class="title" style="text-shadow: 2px 2px #0000008c;">Signup Discreetly</h1>
+<form>
+    <label for="username">Username:</label>
+    <input style="color: #fba33a;
+    border-radius: 5px;
+    border: 1px solid #fba33a;
+    background-color: #000;" type="text" name="username" class="disc" autofocus required>
+     <label for="password">Password:</label>
+    <input style="color: #fba33a;
+    border-radius: 5px;
+    border: 1px solid #fba33a;
+    background-color: #000;" type="text" name="password" class="disc" required>
+    
+    <button style="color: #fba33a;border-radius: 5px;border: 1px solid #fba33a;background-color: #000;" type="submit">Enter</button>
+  </form>
+  <p id="msg"></p>
+<script>
+// const url = 'http://localhost:3000/'
+// const roomsUrl = './addrooms.html'
+
+// const params = new URLSearchParams(window.location.search);
+// const errorMsg = params.get('error');
+
+// if (errorMsg) {
+//   const msgC = document.getElementById("msg");
+//   msgC.textContent = errorMsg;
+// }
+
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+  event.preventDefault(); // evita que el formulario se envíe automáticamente
+  const formData = new FormData(form);
+  const data = JSON.stringify(Object.fromEntries(formData.entries())); // convierte los datos del formulario en un objeto JSON
+      
+  fetch(url + 'signup', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: data
+  })
+  .then(response => response.json())
+  .then(data => {
+    
+    if (data.status.status === "true") {
+      const user = data.status.username;
+      localStorage.setItem("user", user);
+      localStorage.setItem("token", data.status.token)
+      window.location.replace(admin);
+    } else {
+      const msgE = document.getElementById("msg");
+      msgE.textContent = data.status.message;
+    }
+  })
+  .catch(error => {
+    console.error(error);
+  });
+});
+</script>
+</body>
+</html>
