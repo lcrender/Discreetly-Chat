@@ -91,4 +91,15 @@ a:hover {
   p.newMessage, p.myMessage {
     margin: 2px;
 }
-
+::-webkit-scrollbar{
+  width: 5px;
+  background-color: #181818;
+}
+::-webkit-scrollbar-track{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #181818;
+}
+::-webkit-scrollbar-thumb{
+  background-color: #F90;
+  background-image: -webkit-linear-gradient(90deg, rgba(255, 255, 255, .2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .2) 75%, transparent 75%, transparent)
+}

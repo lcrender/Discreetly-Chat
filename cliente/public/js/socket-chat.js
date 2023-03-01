@@ -33,6 +33,11 @@ socket.on('createMsg', (respa) => {
     msgDiv.setAttribute("class", "newMessage");
     const chatMessages = document.querySelector(".chat-messages");
     chatMessages.appendChild(msgDiv);
+    // Extra Feature Experimental
+    if (respa.message === "dame LUNA") {
+        const audio = document.getElementById('myAudio');
+        audio.play(); 
+    }
 });
 socket.on('disconnect', () => {
 });
