@@ -20,7 +20,7 @@ POST /login => {username, password}<br>
 <br>
 Crear Sala:<br>
 POST /rooms/add => {roomName}<br>
-Ver Salas<br>
+Ver Salas:<br>
 GET /rooms<br>
 Entrar en Sala:<br>
 PUT /rooms/enter => {username, room}<br>
