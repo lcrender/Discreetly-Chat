@@ -1,11 +1,14 @@
 # DISCREETLY CHAT V1
+## INTRODUCCIÓN
 Proyecto realizado con Nodejs, Express, Socket.io y MongoDb.<br><br>
-En esta primera version de la app podras hacer un registro de usuario para crear canales de chat.<br>
-Para acceder al chat solo necesitaras crear un usuario y seleccionar uno de los canales existentes.<br>
+La escencia de esta app es facilitar salas de chat con cierta privacidad. Los mensajes no se guardan en nuestra base de datos y la información del usuario se eliminar al cerrar la ventana de chat.<br>
+En esta primera versión de la app podras hacer un registro de usuario para crear canales de chat.<br>
+Para acceder al chat solo necesitaras crear un usuario desde el index.html y seleccionar uno de los canales existentes.<br>
 Solamente podras chatear y ver los mensajes desde que te conectas al chat. Cuando cerras el chat se borran los datos de acceso.<br>
+NO UTILICES ESTE CHAT SI QUERES TENER UN REGISTRO DE TUS MENSAJE!<br>
 Las primeras 2 versiones de la app seran solamente con fines experimentales para ir amigandoce con la tecnologia.<br>
 ## ¿COMO SE USA?
-Clona el proyecto desde Github, abre la carpeta server. Cambia el nombre del archivo .env.template (debe quedar .env) edita los datos de la base de datos MongoDb.<br>
+Clona el proyecto desde Github, abre la carpeta server. Cambia el nombre del archivo .env.template (debe quedar .env) edita los datos de la base de datos MongoDb. No te olvides de seleccionar si quieres trabajar en localhost o en un host (utiliza la opción host o local.<br>
 Desde una terminal, instala las dependencias del servidor (debes estar dentro de la carpeta server) ``npm i``<br>
 Asegurate de tener corriendo MongoDb en el equipo.<br>
 Utiliza el comando ``npm start`` para iniciar el servidor.<br>
