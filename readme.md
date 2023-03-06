@@ -30,4 +30,4 @@ PUT /rooms/enter => {username, room}<br>
 <br><br>
 
 ## ROADMAP
-![Roadmap](https://github.com/lcrender/Discreetly-Chat/blob/Chaza/roadmap.jpg)
+![Roadmap](https://github.com/lcrender/Discreetly-Chat/blob/Lcrender/roadmap.jpg)
