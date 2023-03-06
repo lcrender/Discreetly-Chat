@@ -1,4 +1,5 @@
 const token = localStorage.getItem("token");
+const username = localStorage.getItem("user");
 const roomsData = 'http://localhost:3000/rooms'; // replace with the actual roomsData URL
 
 async function displayRooms() {
@@ -6,10 +7,10 @@ async function displayRooms() {
 	const rooms = await response.json();
 	const roomsList = document.getElementById('rooms-list');
 	rooms.forEach((room) => {
-		//console.log(room._id)
 		const roomName = room.roomName;
 		const roomUsers = room.users.length;
-		roomsList.innerHTML += `<li class="disc" style="background-color: #fda4294f;;
+		roomsList.innerHTML += `<li class="disc" style="background-color: #00ff00;;
+		border: 1px solid #000;
 		margin: 5px;
 		padding: 10px;
 		display: block;
@@ -19,7 +20,7 @@ async function displayRooms() {
 		color: #000;"><a style="text-decoration: none;
 		color: #000;
 		text-transform: uppercase;
-		font-weight: bold;">${roomName}</a></li>`;
+		font-weight: bold;" href="chat.html?username=${username}&room=${roomName}">${roomName} (${roomUsers} users)</a></li>`;
 	});
 };
 
@@ -45,10 +46,10 @@ async function displayRooms() {
 // 		console.error(error);
 // 	  });
 // 	};
-	// const response = await fetch(roomsDel)
-	// const rooms = await response.json();
-	// console.log(rooms)
-	// location.reload()
+// 	const response = await fetch(roomsDel)
+// 	const rooms = await response.json();
+// 	console.log(rooms)
+// 	location.reload()
 
 function loadRoomPage() {
 	displayRooms();

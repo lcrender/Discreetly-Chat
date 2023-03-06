@@ -1,0 +1,100 @@
+.matrix-container {
+    background-color: #000;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .matrix-text {
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace;
+    color: #0f0;
+    position: relative;
+  }
+  
+  .matrix-text span {
+    position: absolute;
+    display: inline-block;
+    line-height: 1em;
+    opacity: 0;
+  }
+  
+  .matrix-text span:nth-child(1) {
+    animation: matrix-animation 10s infinite;
+    left: 10%;
+    top: -20%;
+  }
+  
+  .matrix-text span:nth-child(2) {
+    animation: matrix-animation 10s infinite;
+    left: 20%;
+    top: -80%;
+  }
+  
+  .matrix-text span:nth-child(3) {
+    animation: matrix-animation 10s infinite;
+    left: 30%;
+    top: -50%;
+  }
+  
+  .matrix-text span:nth-child(4) {
+    animation: matrix-animation 10s infinite;
+    left: 40%;
+    top: -10%;
+  }
+  
+  .matrix-text span:nth-child(5) {
+    animation: matrix-animation 10s infinite;
+    left: 50%;
+    top: -70%;
+  }
+  
+  .matrix-text span:nth-child(6) {
+    animation: matrix-animation 10s infinite;
+    left: 60%;
+    top: -30%;
+  }
+  
+  .matrix-text span:nth-child(7) {
+    animation: matrix-animation 10s infinite;
+    left: 70%;
+    top: -90%;
+  }
+  
+  .matrix-text span:nth-child(8) {
+    animation: matrix-animation 10s infinite;
+    left: 80%;
+    top: -40%;
+  }
+  
+  .matrix-text span:nth-child(9) {
+    animation: matrix-animation 10s infinite;
+    left: 90%;
+    top: -60%;
+  }
+  
+  .matrix-text span:nth-child(10) {
+    animation: matrix-animation 10s infinite;
+    left: 100%;
+    top: -80%;
+  }
+  
+  @keyframes matrix-animation {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+    10% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    90% {
+      opacity: 1;
+      transform: translateY(100vh);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(100vh);
+    }
+  }
