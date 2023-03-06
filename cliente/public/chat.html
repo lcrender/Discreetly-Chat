@@ -6,10 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat Room</title>
     <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <style>
+    input:focus {
+      outline: none;
+    }
+    input.disc {
+        color: #00ff00;
+        border-radius: 0;
+        background-color: #000;
+        border: 0;
+        border-left: 4px solid #00ff00;
+        caret-color: #00ff00;
+      }
+    a.link:visited, a.link:hover, a.link {
+      color: #00ff00;
+      text-decoration: none;
+    }
+   
+    
+    </style>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
 </head>
 <body>
-  <h1 class="title" style="text-shadow: 2px 2px #0000008c;">Discreetly Chat</h1>
+  <a title="rooms" class="link" href="./rooms.html">Return to Rooms</a>
     <h3 id="room" class="title" style="text-shadow: 2px 2px #0000008c;"></h3>
     <div class="chat-container">
         <div class="chat-messages">
@@ -18,18 +37,15 @@
        
       </div>
       <form class="chatForm">
-        <input type="text" class="disc" style="color: #fba33a;
-        border: 1px solid #fba33a;
-        background-color: #000;" >
-        <button style="color: #fba33a;border: 1px solid #fba33a;background-color: #000;" type="submit">Send</button>
+        <input type="text" class="disc" required autofocus>
+        <button style="color: #00ff00;border: 1px solid #00ff00;background-color: #000;" type="submit">↵</button>
       </form>
       <p id="msg"></p>
       <p id="msg2"></p>
+      <p id="peoples-list"></p>
       <audio id="myAudio">
         <source src="./img/luna.mp3" type="audio/mp3">
       </audio>
-      <p id="peoples-list"></p>
-
      <!-- Boton Submit, Falta Exportar -->
       <script src="js/socket-chat-jquery.js"></script>
         <!--<script src="js/libs/jquery.min.js"></script>-->

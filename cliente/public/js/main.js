@@ -29,6 +29,7 @@ form.addEventListener('submit', (event) => {
     }
   })
   .catch(error => {
-    console.error(error);
+    const msgE = document.getElementById("msg");
+      msgE.textContent = error;
   });
 });

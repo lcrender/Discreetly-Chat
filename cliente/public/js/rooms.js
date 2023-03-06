@@ -8,7 +8,7 @@ async function displayRooms() {
 	rooms.forEach((room) => {
 		const roomName = room.roomName;
 		const roomUsers = room.users.length;
-		roomsList.innerHTML += `<li class="disc" style="background-color: #fda4294f;;
+		roomsList.innerHTML += `<li class="disc" style="background-color: #00ff00;;
 		border: 1px solid #000;
 		margin: 5px;
 		padding: 10px;
@@ -17,9 +17,6 @@ async function displayRooms() {
 		margin-right: auto;
 		max-width: 50%;
 		color: #000;"><a style="text-decoration: none;
-		color: #000;
-		text-transform: uppercase;
-		font-weight: bold;"><a style="text-decoration: none;
 		color: #000;
 		text-transform: uppercase;
 		font-weight: bold;" href="chat.html?username=${username}&room=${roomName}">${roomName} (${roomUsers} users)</a></li>`;

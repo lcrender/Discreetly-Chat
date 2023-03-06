@@ -9,18 +9,20 @@
     <script src="./config/config.js"></script>
 </head>
 <body>
-<h1 class="title" style="text-shadow: 2px 2px #0000008c;">Discreetly Chat</h1>
+<h1 class="title">Discreetly Chat</h1>
 <form>
     <label for="username">Username:</label>
-    <input style="color: #fba33a;
+    <input style="color: #00ff00;
     border-radius: 5px;
-    border: 1px solid #fba33a;
+    border: 1px solid #00ff00;
     background-color: #000;" type="text" name="username" class="disc" autofocus required>
     <!-- Agrega campos de entrada aquí -->
-    <button style="color: #fba33a;border-radius: 5px;border: 1px solid #fba33a;background-color: #000;" type="submit">Enter</button>
+    <button style="color: #00ff00;border-radius: 5px;border: 1px solid #00ff00;background-color: #000;" type="submit">Enter</button>
   </form>
   <p id="msg"></p>
-  
+  <div>
+    <p><a href="./signup.html">Signup</a> or <a href="./login.html">Login</a> to add chat rooms.</p>
+  </div>
 <script>
 const params = new URLSearchParams(window.location.search);
 const errorMsg = params.get('error');

@@ -7,19 +7,19 @@
     <title>Chat Room</title> 
     <link rel="stylesheet" type="text/css" href="./css/main.css">
     <script src="./config/config.js"></script>
-    <script src="js/addrooms.js"></script>
+    <script src="js/admin.js"></script>
 </head>
 <body>
-    <h2 class="title" style="text-shadow: 2px 2px #0000008c;">Add Rooms</h2>
-    <div>
+    <!-- <h2 class="title">Add Rooms</h2> -->
+    <div class="container">
     <form>
         <label for="username">New Room Name:</label>
-        <input style="color: #fba33a;
+        <input style="color: #00ff00;
         border-radius: 5px;
-        border: 1px solid #fba33a;
+        border: 1px solid #00ff00;
         background-color: #000;" type="text" name="roomName" class="disc" autofocus required>
         <!-- Agrega campos de entrada aquí -->
-        <button style="color: #fba33a;border-radius: 5px;border: 1px solid #fba33a;background-color: #000;" type="submit">Add</button>
+        <button style="color: #00ff00;border-radius: 5px;border: 1px solid #00ff00;background-color: #000;" type="submit">Add</button>
       </form>
       <p id="msg"></p>
     </div>
@@ -27,12 +27,12 @@
    <!-- <h2 class="title" style="text-shadow: 2px 2px #0000008c;">Delete Room</h2> --> 
     <div><ul id="rooms-list"></ul></div>
     <script>
+      // ADD ROOM
         const form = document.querySelector('form');
         form.addEventListener('submit', (event) => {
           event.preventDefault(); // evita que el formulario se envíe automáticamente
           const formData = new FormData(form);
           const data = JSON.stringify(Object.fromEntries(formData.entries())); // convierte los datos del formulario en un objeto JSON
-              
           fetch(url + 'rooms/add', {
             method: 'POST',
             headers: {'Content-Type': 'application/json',
@@ -41,16 +41,17 @@
             body: data
           })
           .then(response => response.json())
-          .then(data => {
+          .then(data => { 
             if (data.status.status === "true") {
-            location.reload()
+              location.reload()
             } else {
               const msgE = document.getElementById("msg");
               msgE.textContent = data.status.message;
             }
           })
           .catch(error => {
-            console.error(error);
+            const msgE = document.getElementById("msg");
+            msgE.textContent = "Access unauthorized: " + error;
           });
         });
         </script>
