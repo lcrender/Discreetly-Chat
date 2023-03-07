@@ -1,3 +1,4 @@
+import {url, roomsUrl} from '../config/config.js';
 const params = new URLSearchParams(window.location.search);
 const errorMsg = params.get('error');
 
@@ -33,3 +34,4 @@ form.addEventListener('submit', (event) => {
 			msgE.textContent = error;
 		});
 });
+

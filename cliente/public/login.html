@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Discreetly</title>
     <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <script src="./config/config.js"></script>
+    <script src="./config/config.js" type="module"></script>
+    <script src="./js/login.js" type="module"></script>
 </head>
 <body>
 <h1 class="title" style="text-shadow: 2px 2px #0000008c;">Login Discreetly</h1>
@@ -25,36 +26,6 @@
     <button style="color: #00ff00;border-radius: 5px;border: 1px solid #00ff00;background-color: #000;" type="submit">Enter</button>
   </form>
   <p id="msg"></p>
-  <a href="./signup.html">Signup</a>
-<script>
-const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
-  event.preventDefault(); // evita que el formulario se envíe automáticamente
-  const formData = new FormData(form);
-  const data = JSON.stringify(Object.fromEntries(formData.entries())); // convierte los datos del formulario en un objeto JSON
-      
-  fetch(url + 'login', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/json'},
-    body: data
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.status.status === "true") {
-      const user = data.status.username;
-      localStorage.setItem("user", user);
-      localStorage.setItem("token", data.status.token)
-      window.location.replace(admin);
-    } else {
-      const msgE = document.getElementById("msg");
-      msgE.textContent = data.status.message;
-    }
-  })
-  .catch(error => {
-    const msgE = document.getElementById("msg");
-      msgE.textContent = error;
-  });
-});
-</script>
+  <a href="./signup.html" title="signup">Signup</a>
 </body>
 </html>

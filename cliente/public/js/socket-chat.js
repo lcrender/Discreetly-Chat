@@ -1,11 +1,12 @@
-const socket = io('http://localhost:3000');
+import {url} from '../config/config.js'
+const socket = io(url);
 
 const params = new URLSearchParams(window.location.search);
 if (!params.has('username') || !params.has('room')) {
 	const errorMsg = 'The Username and the Room are required!';
 	window.location.replace(`index.html?error=${encodeURIComponent(errorMsg)}`);
 }
-let user = {
+export let user = {
 	username: params.get('username'),
 	room: params.get('room')
 };
@@ -72,3 +73,5 @@ socket.on('welcome', (resp) => {
 	const finalmsg = `${resp} is connected to the chatroom!`;
 	msgPl.textContent = finalmsg;
 });
+
+export function emitSocket(roomN, messageS) {socket.emit('createMsg', { room: roomN, message: messageS });}

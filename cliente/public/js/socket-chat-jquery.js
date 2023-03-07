@@ -1,3 +1,7 @@
+import {url} from '../config/config.js';
+// const socket = io(url);
+import {user, emitSocket} from './socket-chat.js';
+
 const form = document.querySelector('.chatForm');
 form.addEventListener('submit', (event) => {
 	event.preventDefault();
@@ -20,7 +24,7 @@ form.addEventListener('submit', (event) => {
 	msgP.setAttribute('id', ID_AUTOMATIC);
 	const chatMessages = document.querySelector('.chat-messages');
 	chatMessages.appendChild(msgP);
-	socket.emit('createMsg', { room: user.room, message: message });
+	emitSocket(user.room, message);
 	messageInput.value = '';
 	setTimeout(() => {
 		let e = document.getElementById(ID_AUTOMATIC);

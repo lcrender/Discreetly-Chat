@@ -1,4 +1,5 @@
-const roomsData = 'http://localhost:3000/rooms'; // replace with the actual roomsData URL
+import {url} from '../config/config.js'
+const roomsData = url + 'rooms';
 const username = localStorage.getItem("user");
 
 async function displayRooms() {
