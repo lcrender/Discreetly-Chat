@@ -15,14 +15,4 @@ router.get('/rooms', renderRooms)
 // Enter in a Room
 router.put('/rooms/enter', enterRoom)
 
-
-// API V2
-// Edit Rooms
-// router.put('/rooms/edit/:id', updateRoom)
-
-// Delete Room
-// router.delete('/rooms/delete/:id',verifyToken, deleteRoom)
-
-
-
 module.exports = router

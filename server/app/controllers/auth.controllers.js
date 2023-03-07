@@ -79,40 +79,6 @@ authCtrl.logIn = async (req, res) => {
         res.status(500).json(respuesta);
     }
 };
-
-// authCtrl.updateToken = async (req, res) => {
-//     const {username} = req;
-//     console.log(username)
-//     const token = await jwt.sign({id: user._id, username: user.username}, JWTSECRET, {expiresIn: 60 * 60 * 1})
-//     res.status(201).json({username})
-// }
-
-// authCtrl.viewMe = async (req, res) => {
-//     const user = await User.findById(req.userId, { password: 0 });
-//     console.log(user)
-//     if (!user) {
-//         return res.status(404).json({message: 'No user found'});
-//     }
-//     res.status(201).json(user)
-// };
-// authCtrl.editMe = async (req, res) => {
-//     const newDisplayname = req.body.displayname;
-//     await User.findByIdAndUpdate(req.userId, {displayname: newDisplayname}).lean()
-//     const user = await User.findById(req.userId, { password: 0 });
-//     res.status(201).json(user)
-// };
-// authCtrl.deleteMe = async (req, res) => {
-//     const id = req.userId
-//     await User.findByIdAndDelete(id)
-//     const respuesta = new Respuestas ({
-//         status: "true",
-//         message: "Usuario Borrado Correctamente.",
-//         auth: "false",
-//         token: "null"
-//     })
-//     res.status(201).json(respuesta)
-// };  
-// Agrega usuario a la base de datos (V1.0)
 authCtrl.addUser = async (req, res) => {
     try {
         const {username} = await req.body;

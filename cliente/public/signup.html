@@ -21,23 +21,11 @@
     border-radius: 5px;
     border: 1px solid #00ff00;
     background-color: #000;" type="text" name="password" class="disc" required>
-    
     <button style="color: #00ff00;border-radius: 5px;border: 1px solid #00ff00;background-color: #000;" type="submit">Enter</button>
   </form>
   <p id="msg"></p>
   <a href="./login.html">Login</a> 
 <script>
-// const url = 'http://localhost:3000/'
-// const roomsUrl = './addrooms.html'
-
-// const params = new URLSearchParams(window.location.search);
-// const errorMsg = params.get('error');
-
-// if (errorMsg) {
-//   const msgC = document.getElementById("msg");
-//   msgC.textContent = errorMsg;
-// }
-
 const form = document.querySelector('form');
 form.addEventListener('submit', (event) => {
   event.preventDefault(); // evita que el formulario se envíe automáticamente
@@ -63,7 +51,8 @@ form.addEventListener('submit', (event) => {
     }
   })
   .catch(error => {
-    console.error(error);
+    const msgE = document.getElementById("msg");
+    msgE.textContent = error;
   });
 });
 </script>
