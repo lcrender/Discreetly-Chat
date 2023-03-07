@@ -3,7 +3,7 @@ const router = Router();
 const { 
     createNewRoom,
     renderRooms,
-    enterRoom  } = require('../controllers/rooms.controllers')
+    enterRoom } = require('../controllers/rooms.controllers')
 const verifyToken = require('../middlewares/verifyToken');
 
 // New Room
