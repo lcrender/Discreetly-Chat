@@ -61,3 +61,4 @@ PUT /rooms/enter => {username, room}<br>
 
 ## ROADMAP
 ![Roadmap](https://github.com/lcrender/Discreetly-Chat/blob/Lcrender/roadmap.jpg)
+ 
