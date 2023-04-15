@@ -22,5 +22,4 @@ app.use((req, res, next) => {
 module.exports.io = socketIO(server);
 require('./socket');
 
-
 module.exports = server;
