@@ -40,21 +40,30 @@ npm start
 ```
 _Cliente:_
 ```
-_Ejecutar el index.html, si estas trabajando desde localhost puedes utilizar Live Server._
-_Accede al signup para entrar al administrador de salas._
-_Crea tu usuario (el nombre sera unico pero se borrara al salir del chat), selecciona la sala de chat y habla con tus amigos, clientes, amantes, o con quien desees tener esa charla privada. No pierdas tiempo en leer los mensajes de la sala porque desde el front end se borraran rapidamente._
+- Ejecutar el index.html, si estas trabajando desde localhost puedes utilizar Live Server.
+- Accede al signup para entrar al administrador de salas._
+- Crea tu usuario (el nombre sera unico pero se borrara al salir del chat), selecciona la sala de chat y habla con tus amigos, clientes, amantes, o con quien desees tener esa charla privada. No pierdas tiempo en leer los mensajes de la sala porque desde el front end se borraran rapidamente.
+```
 
 ## API V1
+
 _Registro / Inicio de Sesion:_
-_POST /signup => {username, password}_
-_POST /login => {username, password}_
-<br>
+```
+POST /signup => {username, password}
+POST /login => {username, password}
+```
 _Crear Sala:_
-_POST /rooms/add => {roomName}_
+```
+POST /rooms/add => {roomName}
+```
 _Ver Salas:_
-_GET /rooms_
+```
+GET /rooms
+```
 _Entrar en Sala:_
-_PUT /rooms/enter => {username, room}_
+```
+PUT /rooms/enter => {username, room}
+```
 <br><br>
 
 ## ROADMAP
