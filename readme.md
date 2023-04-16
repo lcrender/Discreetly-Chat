@@ -29,36 +29,41 @@ npm install
 
 _Cambia el nombre del archivo .env.template (debe quedar .env) edita los datos de la base de datos MongoDb. No te olvides de seleccionar si quieres trabajar en localhost o en un servidor (utiliza la opción "host" para trabajar en un servidor o "local" para trabajar en un servidor local)_
 
-## Commands to execute ⌨️
+## COMO EJECUTAR LA APP
 
 ⚠️ _RECUERDA TENER MONGODB CORRIENDO EN EL SERVIDOR_ ⚠️
 
 _Luego de tener instalados todos los programas necesarios, haber instalado las dependencias del servidor y haber configurado el .env utiliza el comando  para iniciar el servidor._
 _Server:_
 ```
-npm run dev
-```
-_Client:_
-```
 npm start
 ```
-Luego ejecuta el frontend (puedes utilizar live server para ejecutarlo desde localhost)<br>
-Utiliza la url /signup.html y login.html para acceder al administrador de salas. Ahi podras crear todas las salas de chat que quieras desde el formulario.<br>
-Luego procede desde el homepage (index.html). Crea tu usuario (el usuario sera unico pero se borrara al salir del chat), selecciona la sala de chat y habla con tus amigos, clientes, amantes, o con quien desees tener esa charla privada.<br>
+_Cliente:_
+```
+_Ejecutar el index.html, si estas trabajando desde localhost puedes utilizar Live Server._
+_Accede al signup para entrar al administrador de salas._
+_Crea tu usuario (el nombre sera unico pero se borrara al salir del chat), selecciona la sala de chat y habla con tus amigos, clientes, amantes, o con quien desees tener esa charla privada. No pierdas tiempo en leer los mensajes de la sala porque desde el front end se borraran rapidamente._
 
 ## API V1
-Registro / Inicio de Sesion:<br>
-POST /signup => {username, password}<br>
-POST /login => {username, password}<br>
+_Registro / Inicio de Sesion:_
+_POST /signup => {username, password}_
+_POST /login => {username, password}_
 <br>
-Crear Sala:<br>
-POST /rooms/add => {roomName}<br>
-Ver Salas:<br>
-GET /rooms<br>
-Entrar en Sala:<br>
-PUT /rooms/enter => {username, room}<br>
+_Crear Sala:_
+_POST /rooms/add => {roomName}_
+_Ver Salas:_
+_GET /rooms_
+_Entrar en Sala:_
+_PUT /rooms/enter => {username, room}_
 <br><br>
 
 ## ROADMAP
 ![Roadmap](https://github.com/lcrender/Discreetly-Chat/blob/Lcrender/roadmap.jpg)
  
+## AUTOR
+
+_Alejandro Chazarreta_ [github] (https://github.com/lcrender)
+
+## LICENSIA
+
+_Licensia del pryecto: [MIT license](https://github.com/)
